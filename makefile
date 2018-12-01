@@ -20,7 +20,7 @@ init:
 		-backend-config="key=mypath/$(env).tfstate" \
 		-backend-config="region=$(AWS_DEFAULT_REGION)" \
 		-backend-config="encrypt=true" \
-		-backend-config="dynamodb_table=myddbtable-$(env)-statestore-lck"
+		-backend-config="dynamodb_table=mybucket-$(env)-statestore-lck"
 
 plan: init
 	terraform plan -var-file=tfvars/$(env).tfvars -out=plan.tfplan
